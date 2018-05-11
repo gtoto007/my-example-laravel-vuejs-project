@@ -10411,6 +10411,15 @@ a.text-dark:focus {
   }
 }
 
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  height: 100%;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -10430,11 +10439,10 @@ a.text-dark:focus {
 }
 
 #contact {
+  height: 100%;
   font-family: 'Teko', sans-serif;
   padding-top: 60px;
   width: 100%;
-  width: 100vw;
-  height: 550px;
   background: #3a6186;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */

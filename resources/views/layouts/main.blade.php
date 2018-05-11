@@ -24,12 +24,16 @@
     <link href="{{asset("/css/app.css")}}" rel="stylesheet">
 
     <link rel="shortcut icon" href="favicon.ico"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
-    @yield('content')
+    <div id="app">
+        @yield('content')
+    </div>
 
 
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

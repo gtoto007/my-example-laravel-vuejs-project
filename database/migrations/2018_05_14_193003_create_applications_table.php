@@ -21,6 +21,7 @@ class CreateApplicationsTable extends Migration
             $table->string('developer_email');
             $table->string('developer_phone');
             $table->text('notes')->nullable();
+            $table->boolean('accepted')->nullable();
 
             $table->timestamps();
         });
