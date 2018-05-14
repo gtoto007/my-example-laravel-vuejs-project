@@ -39,7 +39,21 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapAjaxRoutes();
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAjaxRoutes()
+    {
+        Route::prefix('ajax')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/ajax.php'));
     }
 
     /**
