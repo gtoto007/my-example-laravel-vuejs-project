@@ -16,10 +16,10 @@ class CreateApplicationsTable extends Migration
         Schema::create('applications', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('developer_first_name');
-            $table->string('developer_last_name');
-            $table->string('developer_email');
-            $table->string('developer_phone');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('phone');
             $table->text('notes')->nullable();
 
             $table->timestamps();

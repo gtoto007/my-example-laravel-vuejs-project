@@ -10,4 +10,13 @@
             </p>
         </div>
     </section>
+    <section class="">
+        <div class="container">
+            <h2>Requisiti</h2>
+            <p>Ciao</p>
+            <ul>
+                <li>Ciao</li>
+            </ul>
+        </div>
+    </section>
 @endsection

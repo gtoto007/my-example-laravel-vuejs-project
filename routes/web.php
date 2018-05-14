@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('applications/applicationForm');
-});
+Auth::routes();
 
-Route::resource('applications', 'App\ApplicationsController');
+Route::get('/', "PagesController@homepage");
+
+Route::get('apply', "PagesController@apply")->name('apply')->middleware('auth');
+Route::post('apply', "PagesController@postApply")->name('apply')->middleware('auth');
+
+Route::resource('applications', 'App\\ApplicationsController');

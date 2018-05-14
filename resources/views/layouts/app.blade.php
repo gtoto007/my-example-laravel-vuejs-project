@@ -70,6 +70,12 @@
         <main class="">
             @yield('content')
         </main>
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">In bocca al lupo! © BitBoss srl</span>
+            </div>
+        </footer>
+
     </div>
 </body>
 </html>

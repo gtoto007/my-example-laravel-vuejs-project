@@ -8,14 +8,22 @@ use Illuminate\Http\Request;
 
 class ApplicationsController extends Controller
 {
+
+    public function __construct()
+    {
+        // Accessible only to admins
+    }
+
     /**
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $applications = Application::all();
+        if ($request->expectsJson())
+            return Application::paginate(20);
 
-        return view('applications.index', ['applications' => $applications]);
+        return view('applications.index');
     }
 
     /**
@@ -23,7 +31,7 @@ class ApplicationsController extends Controller
      */
     public function create()
     {
-        return view('applications.applicationForm');
+        return view('applications.form');
     }
 
     /**
