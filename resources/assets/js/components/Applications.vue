@@ -4,12 +4,12 @@
     import collection from '../mixins/collection';
 
     export default {
-        components: { Paginator },
+        components: {Paginator},
 
         mixins: [collection],
 
         data() {
-            return { dataSet: false , items : []};
+            return {dataSet: false, items: []};
         },
 
         created() {
@@ -22,7 +22,7 @@
             },
 
             url(page) {
-                if (! page) {
+                if (!page) {
                     let query = location.search.match(/page=(\d+)/);
 
                     page = query ? query[1] : 1;
@@ -36,6 +36,12 @@
                 this.items = data.data;
 
                 window.scrollTo(0, 0);
+            },
+            accept(item) {
+
+            },
+            refuse(item) {
+
             }
         }
     }

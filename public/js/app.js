@@ -47363,7 +47363,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.items = data.data;
 
             window.scrollTo(0, 0);
-        }
+        },
+        accept: function accept(item) {},
+        refuse: function refuse(item) {}
     }
 });
 

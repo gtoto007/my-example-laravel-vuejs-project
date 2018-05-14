@@ -26,22 +26,14 @@ class ApplicationsController extends Controller
         return view('applications.index');
     }
 
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function create()
-    {
-        return view('applications.form');
-    }
+
 
     /**
-     * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param Application $application
      */
-    public function store(Request $request)
+    public function accept(Application $application)
     {
-        $application = Application::create($request->all());
-
-        return view('applications.complete', ['application' => $application]);
+        $application->accept();
     }
+
 }
