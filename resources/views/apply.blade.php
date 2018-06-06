@@ -11,7 +11,7 @@
     <section>
         <div class="container">
             <div class="container">
-                {!! Form::open(['route' => ['applications.store'], 'method' => 'post'])!!}
+                {!! Form::open(['route' => ['postApply'], 'method' => 'post'])!!}
                 <div class="form-group">
                     {!! Form::label('first_name', 'Nome') !!}
                     {!! Form::text('first_name', null, ['class' => 'form-control', 'placeholder'=>'Nome']) !!}
