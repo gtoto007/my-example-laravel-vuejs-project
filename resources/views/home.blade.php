@@ -3,70 +3,69 @@
 @section('content')
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Benvenuto</h1>
-            <p class="lead text-muted">Candidati ora per diventare uno sviluppatore di BitBoss</p>
+            <h1 class="jumbotron-heading">Welcome</h1>
+            <p class="lead text-muted">Apply now to become a BitBoss developer</p>
             <p>
-                <a href="{{route('apply')}}" class="btn btn-primary my-2">Candidati</a>
+                <a href="{{route('apply')}}" class="btn btn-primary my-2">Apply</a>
             </p>
         </div>
     </section>
     <section class="">
         <div class="container">
-            <h2>Il Test</h2>
+            <h2>The Test</h2>
 
-            <p>Abbiamo costruito questo test.</p>
+            <p>We built this test.</p>
 
-            <p>Abbiamo fatto finta di creare questa piccola - e brutta - applicazione per raccogliere le candidature dei
-                programmatori. Riesci a finirla? </p>
+            <p>We pretended to create this little - and ugly - application to collect applications from
+                programmers. Can you finish it?</p>
 
-            <p>Non ti preoccupare, non la useremo davvero per raccogliere candidature. Siamo più bravi di così.</p>
-
-            <h2>Requisiti</h2>
+            <p>Don't worry, we're not really going to use it to collect applications. We are better than that.</p>
+            <h2>Requirements</h2>
             <ul>
-                <li>Grafica
+                <li>Graphics
                 </li>
                 <ul>
-                    <li>Mettere il footer sticky in fondo alla pagina
+                    <li>Put the sticky footer at the bottom of the page
                     </li>
                 </ul>
-                <li>Funzionalità per gli utenti</li>
+                <li>Features for users</li>
                 <ul>
-                    <li>Dopo la registrazione, l'utente deve trovarsi sulla pagina per candidarsi.</li>
-                    <li> Bisogna memorizzare la candidatura dell'utente
+                    <li>After registration, the user must be on the page to apply.</li>
+                    <li>The user's application must be stored
                     </li>
-                    <li> Associare la candidatura all'utente che l'ha inviata
+                    <li>Associate the application with the user who sent it
                     </li>
-                    <li> Dare all'utente la possibilità di accedere ad una pagina dove è presente lo stato
-                        della sua candidatura (accettata o rifiutata). Al login l'utente viene portato automaticamente
-                        su questa pagina.
+                    <li>Give the user the ability to access a page where the status is present
+                        your application (accepted or rejected). At login the user is automatically taken
+                        on this page.
                     </li>
-                    <li> Un utente non può candidarsi più volte</li>
+                    <li>A user cannot apply multiple times</li>
                 </ul>
-                <li>Funzionalità per gli utenti Admin</li>
+                <li>Features for Admin users</li>
                 <ul>
-                    <li> Solo gli utenti admin possono accedere ad una sezione con una lista delle candidature ricevute
+                    <li>Only admin users can access a section with a list of applications received
                     </li>
-                    <li> Notifica quando c’è una nuova candidatura (su Slack + Email agli utenti admin)
+                    <li>Notify when there is a new application (on Slack + Email to admin users)
                     </li>
-                    <li> Ogni candidato potrà essere rifiutato o scartato. Creare la logica di accettazione o scarto
-                        dopo che admin ha cliccato sul pulsante d'azione
+                    <li>Each candidate can be rejected or rejected. Create the logic of acceptance or rejection
+                        after admin clicks the action button
                     </li>
-                    <li> Notifica al candidato quando viene accettato o rifiutato
+                    <li>Notify the candidate when they are accepted or rejected
                     </li>
                 </ul>
-                <li> Popolare il database con un seed delle candidature
+                <li>Populate the database with a seed of the applications
                 </li>
             </ul>
-            <h2>Quando hai finito</h2>
-            <p>Fai una pull request sul repository. Esamineremo il codice che hai scritto.</p>
-            <h2>Cosa esamineremo</h2>
-            <p>Guarderemo se il codice funziona e se i requisiti sono rispettati, certo.</p>
-            <p>Ma guarderemo anche tutto il resto: la qualità e l'ordine del codice, l'inventiva per risolvere un
-                problema, quanto conosci Laravel, le ottimizzazioni e i piccoli dettagli.</p>
-            <p>Non aver paura di usare troppo overengineering, di stravolgere tutto, o, al contrario, di usare la nostra
-                traccia, o di essere troppo banale. Prova - se ti va
-                - a
-                stupirci.</p>
+            <h2>When you are done</h2>
+            <p>Make a pull request on the repository. We will review the code you wrote.</p>
+            <h2>What we will examine</h2>
+            <p>We'll see if the code works and if the requirements are met, sure.</p>
+            <p>But we'll also look at everything else: the quality and order of the code, the inventiveness to solve a
+                problem, how much do you know about Laravel, the optimizations and the small details.</p>
+            <p>Don't be afraid to use too much overengineering, to overturn everything, or, on the contrary, to use our
+                trace, or being too mundane. Try - if you like
+                - to
+                surprise us.</p>
         </div>
     </section>
 @endsection

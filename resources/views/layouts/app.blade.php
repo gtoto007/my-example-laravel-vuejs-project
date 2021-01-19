@@ -72,7 +72,7 @@
         </main>
         <footer class="footer">
             <div class="container">
-                <span class="text-muted">In bocca al lupo! © BitBoss srl</span>
+                <span class="text-muted">Good Luck! © BitBoss srl</span>
             </div>
         </footer>
 
