@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreApplyRequest;
+use App\Models\Application;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -26,9 +28,11 @@ class ApplyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreApplyRequest $request)
     {
-        //
+        Application::create($request->validated());
+
+        return to_route('apply.index');
     }
 
     /**
