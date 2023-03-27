@@ -25,6 +25,9 @@ Route::get('/', function () {
     ]);
 });
 
+Route::resource('apply', \App\Http\Controllers\ApplyController::class)->middleware('auth');
+
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
