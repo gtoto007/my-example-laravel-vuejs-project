@@ -26,7 +26,7 @@ class StoreApplyRequest extends FormRequest
                 'first_name' => ['required', 'max:50'],
                 'last_name' => ['required', 'max:50'],
                 'email' => ['required', 'max:50', 'email'],
-                'phone' => ['required', 'max:50'],
+                'phone' => ['required', 'max:30'],
             ];
     }
 }

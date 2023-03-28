@@ -1,6 +1,5 @@
 <script setup>
 import {ref} from 'vue';
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
@@ -57,7 +56,7 @@ const showingNavigationDropdown = ref(false);
                   </template>
 
                   <template #content>
-                    <DropdownLink :href="route('profile.edit')"> Profile</DropdownLink>
+                    <DropdownLink :href="route('profile.edit')">Profilo</DropdownLink>
                     <DropdownLink :href="route('logout')" method="post" as="button">
                       Log Out
                     </DropdownLink>
@@ -81,7 +80,7 @@ const showingNavigationDropdown = ref(false);
 
                   <Link :href="route('register')"
                         class="ml-4  text-gray-400 hover:text-gray-900">
-                    Register
+                    Registrati
                   </Link>
                 </template>
               </div>

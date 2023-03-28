@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreApplyRequest;
 use App\Models\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class ApplyController extends Controller
@@ -30,9 +31,8 @@ class ApplyController extends Controller
      */
     public function store(StoreApplyRequest $request)
     {
-        Application::create($request->validated());
-
-        return to_route('apply.index');
+        Application::create([...$request->validated(), 'user_id' => Auth::user()->id]);
+        return to_route('home');
     }
 
     /**
