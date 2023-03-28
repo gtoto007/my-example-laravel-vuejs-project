@@ -32,7 +32,7 @@ class ApplyController extends Controller
     public function store(StoreApplyRequest $request)
     {
         Application::create([...$request->validated(), 'user_id' => Auth::user()->id]);
-        return to_route('home');
+        return to_route('apply.index')->with('message','la tua candidatura è stata registrata');
     }
 
     /**
