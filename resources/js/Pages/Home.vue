@@ -1,11 +1,12 @@
 <script setup>
-import {Head} from '@inertiajs/vue3';
+import {Head, router} from '@inertiajs/vue3';
 import NavBar from "@/Layouts/NavBar.vue";
 import Paragraph from "@/Components/Paragraph.vue";
 import LI from "@/Components/LI.vue";
 import Subtitle from "@/Components/Subtitle.vue";
 import MyTitle from "@/Pages/MyTitle.vue";
 import Layout from "@/Layouts/Layout.vue";
+import Checked from "@/Components/Checked.vue";
 
 defineProps({
   canLogin: {
@@ -23,6 +24,7 @@ defineProps({
     required: true,
   },
 });
+
 </script>
 
 <template>
@@ -34,7 +36,7 @@ defineProps({
         class="bg-gray-100 w-full  text-center selection:bg-red-500 selection:text-white p-20">
       <MyTitle>Benvenuto</MyTitle>
       <p class="text-xl text-gray-500 mt-2 mb-6">Candidati ora per diventare uno sviluppatore di BitBoss</p>
-      <a href="/apply" class="bg-blue-500 rounded-md text-white p-2">Candidati</a>
+      <a :href="route('apply.create')" class="bg-blue-500 rounded-md text-white p-2">Candidati</a>
     </sectio>
 
     <section class="bg-white w-full pl-14 pt-4  selection:bg-red-500 selection:text-white pb-4">
@@ -50,11 +52,13 @@ defineProps({
       </Paragraph>
 
       <Subtitle>Requisiti</Subtitle>
+
+      <Checked>Mettere il footer sticky in fondo alla pagina</Checked>
+      <Checked>Dopo la registrazione, l'utente deve finire sulla pagina per candidarsi.</Checked>
+      <Checked>Memorizzare la candidatura dell'utente</Checked>
+      <Checked>Associare la candidatura all'utente che l'ha inviata</Checked>
       <ul>
-        <LI>Mettere il footer sticky in fondo alla pagina</LI>
-        <LI>Dopo la registrazione, l'utente deve finire sulla pagina per candidarsi.</LI>
-        <LI> Memorizzare la candidatura dell'utente</LI>
-        <LI> Associare la candidatura all'utente che l'ha inviata</LI>
+
         <LI> Dare all'utente la possibilità di accedere ad una pagina dove è presente lo stato
           della sua candidatura (accettata o rifiutata). Al login l'utente viene portato automaticamente su
           questa pagina.
