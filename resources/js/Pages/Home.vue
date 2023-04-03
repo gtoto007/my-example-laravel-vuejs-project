@@ -57,10 +57,10 @@ defineProps({
       <Checked>Dopo la registrazione, l'utente deve finire sulla pagina per candidarsi.</Checked>
       <Checked>Memorizzare la candidatura dell'utente</Checked>
       <Checked>Associare la candidatura all'utente che l'ha inviata</Checked>
+      <Checked> Dare all'utente la possibilità di accedere ad una pagina dove è presente lo stato
+        della sua candidatura (accettata o rifiutata). </Checked>
       <ul>
-
-        <LI> Dare all'utente la possibilità di accedere ad una pagina dove è presente lo stato
-          della sua candidatura (accettata o rifiutata). Al login l'utente viene portato automaticamente su
+        <LI> Al login l'utente viene portato automaticamente su
           questa pagina.
         </LI>
         <LI>Un utente non può candidarsi più volte</LI>

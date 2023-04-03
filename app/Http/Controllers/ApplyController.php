@@ -6,6 +6,7 @@ use App\Http\Requests\StoreApplyRequest;
 use App\Models\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 
 class ApplyController extends Controller
@@ -15,7 +16,7 @@ class ApplyController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Apply');
+        return Inertia::render('Apply/Index');
     }
 
     /**
@@ -23,7 +24,7 @@ class ApplyController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Apply/Create');
     }
 
     /**
@@ -32,15 +33,23 @@ class ApplyController extends Controller
     public function store(StoreApplyRequest $request)
     {
         Application::create([...$request->validated(), 'user_id' => Auth::user()->id]);
-        return to_route('apply.index')->with('message','la tua candidatura è stata registrata');
+        return to_route('apply.index')->with('message', 'la tua candidatura è stata registrata');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Application $apply)
     {
-        //
+        Gate::authorize('view', $apply);
+
+        return Inertia::render('Apply/Show', [
+            "first_name" => $apply->first_name,
+            "last_name" => $apply->last_name,
+            "phone" => $apply->phone,
+            "email" => $apply->email,
+            "status"=> $apply->status,
+            "notes" => $apply->notes]);
     }
 
     /**
