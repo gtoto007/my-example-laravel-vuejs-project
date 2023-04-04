@@ -22,8 +22,11 @@ class ApplyController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
+        if ($request->user()->application()->exists())
+            return $this->redirectPageApplication($request->user()->application());
+
         return Inertia::render('Apply/Create');
     }
 
@@ -32,8 +35,11 @@ class ApplyController extends Controller
      */
     public function store(StoreApplyRequest $request)
     {
-        Application::create([...$request->validated(), 'user_id' => Auth::user()->id]);
-        return to_route('apply.index')->with('message', 'la tua candidatura è stata registrata');
+        if ($request->user()->application()->exists())
+            return $this->redirectPageApplication($request->user()->application());
+
+        $application = Application::create([...$request->validated(), 'user_id' => Auth::user()->id]);
+        return to_route('apply.show', $application->id);
     }
 
     /**
@@ -48,7 +54,7 @@ class ApplyController extends Controller
             "last_name" => $apply->last_name,
             "phone" => $apply->phone,
             "email" => $apply->email,
-            "status"=> $apply->status,
+            "status" => $apply->status,
             "notes" => $apply->notes]);
     }
 
@@ -74,5 +80,15 @@ class ApplyController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    /**
+     * @param Application $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function redirectPageApplication(Application $application): \Illuminate\Http\RedirectResponse
+    {
+        return redirect()->intended(route('apply.show', $application->id))
+            ->with(['message' => 'ti sei già candidato']);
     }
 }

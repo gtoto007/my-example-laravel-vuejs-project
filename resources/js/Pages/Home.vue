@@ -58,12 +58,10 @@ defineProps({
       <Checked>Memorizzare la candidatura dell'utente</Checked>
       <Checked>Associare la candidatura all'utente che l'ha inviata</Checked>
       <Checked> Dare all'utente la possibilità di accedere ad una pagina dove è presente lo stato
-        della sua candidatura (accettata o rifiutata). </Checked>
+        della sua candidatura (accettata o rifiutata).Al login l'utente viene portato automaticamente su
+        questa pagina. </Checked>
+      <Checked>Un utente non può candidarsi più volte</Checked>
       <ul>
-        <LI> Al login l'utente viene portato automaticamente su
-          questa pagina.
-        </LI>
-        <LI>Un utente non può candidarsi più volte</LI>
         <LI> Solo gli utenti admin possono accedere alla manipolazione delle candidature</LI>
         <LI> Notifica quando c’è una nuova candidatura (su Slack + Email agli utenti admin)</LI>
         <LI> Logica di accettazione o scarto dopo che admin ha cliccato sul pulsante</LI>
