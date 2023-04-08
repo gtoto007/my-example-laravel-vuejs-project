@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 
-class ApplyController extends Controller
+class ApplicationsController extends Controller
 {
     /**
      * Display a listing of the resource.

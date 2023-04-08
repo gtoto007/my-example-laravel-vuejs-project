@@ -25,7 +25,7 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::resource('apply', \App\Http\Controllers\ApplyController::class)->middleware('auth');
+Route::resource('apply', \App\Http\Controllers\ApplicationsController::class)->middleware('auth');
 
 
 Route::get('/dashboard', function () {
