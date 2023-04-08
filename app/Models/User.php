@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Application::class);
     }
+    public function IsAdmin(): bool
+    {
+        return $this->is_admin && $this->hasVerifiedEmail();
+    }
+    }
 }
