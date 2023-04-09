@@ -61,12 +61,12 @@ defineProps({
         della sua candidatura (accettata o rifiutata).Al login l'utente viene portato automaticamente su
         questa pagina. </Checked>
       <Checked>Un utente non può candidarsi più volte</Checked>
+      <Checked>Solo gli utenti admin possono accedere alla manipolazione delle candidature</Checked>
+      <Checked> Logica di accettazione o scarto dopo che admin ha cliccato sul pulsante</Checked>
+      <Checked> Popolare il database con un seed delle candidature</Checked>
       <ul>
-        <LI> Solo gli utenti admin possono accedere alla manipolazione delle candidature</LI>
         <LI> Notifica quando c’è una nuova candidatura (su Slack + Email agli utenti admin)</LI>
-        <LI> Logica di accettazione o scarto dopo che admin ha cliccato sul pulsante</LI>
         <LI> Notifica al candidato quando viene accettato o rifiutato</LI>
-        <LI> Popolare il database con un seed delle candidature</LI>
       </ul>
       <Subtitle>Quando hai finito</Subtitle>
       <Paragraph>Fai il push sul repository. Esamineremo il codice che hai scritto.</Paragraph>

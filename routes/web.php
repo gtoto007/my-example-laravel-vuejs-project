@@ -25,7 +25,18 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::resource('apply', \App\Http\Controllers\ApplicationsController::class)->middleware('auth');
+Route::resource('apply', \App\Http\Controllers\ApplicationsController::class)
+    ->middleware('auth');
+
+
+Route::middleware([\App\Http\Middleware\IsAdmin::class])->group(function () {
+    Route::post('/apply/accept', [\App\Http\Controllers\ApplicationsController::class, 'accept'])
+        ->name('apply.accept');
+
+    Route::post('/apply/discard', [\App\Http\Controllers\ApplicationsController::class, 'discard'])
+        ->name('apply.discard');
+
+});
 
 
 Route::get('/dashboard', function () {

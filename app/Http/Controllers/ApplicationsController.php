@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreApplyRequest;
 use App\Models\Application;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -16,7 +17,11 @@ class ApplicationsController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Apply/Index');
+        Gate::authorize('viewAny', Application::class);
+
+        $applications = Application::orderByRaw("CASE WHEN Status = '".Status::Pendente."' THEN 0 ELSE 1 END")->orderby('updated_at','Desc')->paginate(10);
+
+        return Inertia::render('Apply/Index', ['items' => $applications->items()]);
     }
 
     /**
@@ -28,6 +33,25 @@ class ApplicationsController extends Controller
             return $this->redirectPageApplication($request->user()->application());
 
         return Inertia::render('Apply/Create');
+    }
+
+
+    public function accept(Request $request)
+    {
+        $application_id = $request->input('id');
+        $application = Application::findOrFail($application_id);
+        $application->status = Status::Accettato;
+        $application->save();
+        return to_route('apply.index')->with('message', 'Candidatura accettata');
+    }
+
+    public function discard(Request $request)
+    {
+        $application_id = $request->input('id');
+        $application = Application::findOrFail($application_id);
+        $application->status = Status::Scartato;
+        $application->save();
+        return to_route('apply.index')->with('message', 'Candidatura scartata');
     }
 
     /**

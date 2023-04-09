@@ -5,7 +5,7 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import {Link} from '@inertiajs/vue3';
-import Success from "@/Layouts/Success.vue";
+import Message from "@/Components/Message.vue";
 
 
 const showingNavigationDropdown = ref(false);
@@ -16,7 +16,7 @@ const showingNavigationDropdown = ref(false);
   <div>
     <div class="min-h-screen justify-between flex flex-col">
 
-      <Success v-if="$page.props.flash.message" :message="$page.props.flash.message"/>
+      <Message v-if="$page.props.flash.message" :message="$page.props.flash.message"/>
 
       <nav class="bg-white border-b border-gray-100">
         <!-- Primary Navigation Menu -->
