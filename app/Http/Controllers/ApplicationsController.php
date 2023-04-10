@@ -19,9 +19,12 @@ class ApplicationsController extends Controller
     {
         Gate::authorize('viewAny', Application::class);
 
-        $applications = Application::orderByRaw("CASE WHEN Status = '".Status::Pendente."' THEN 0 ELSE 1 END")->orderby('updated_at','Desc')->paginate(10);
+        $applications = Application::orderByRaw("CASE WHEN Status = '".Status::Pendente."' THEN 0 ELSE 1 END")
+            ->orderby('updated_at','Desc')
+            ->paginate(10);
 
-        return Inertia::render('Apply/Index', ['items' => $applications->items()]);
+
+        return Inertia::render('Apply/Index', ['applications' => $applications]);
     }
 
     /**
