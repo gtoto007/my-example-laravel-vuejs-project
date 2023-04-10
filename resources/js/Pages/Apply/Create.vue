@@ -2,6 +2,8 @@
 
 import {router, useForm} from '@inertiajs/vue3'
 import Error from "@/Pages/Error.vue";
+import Subtitle from "@/Components/Subtitle.vue";
+import MyTitle from "@/Pages/MyTitle.vue";
 
 const props = defineProps({
   errors: {
@@ -18,7 +20,7 @@ const form = useForm({
   notes: null,
 })
 
-function submit() {
+const submit = () => {
   router.post('/apply', form)
 }
 </script>
@@ -45,7 +47,7 @@ function submit() {
           <label class="text-gray-700" for="emailAddress">Email</label>
           <input id="email" name="email" type="email" v-model="form.email"
                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
-          <Error v-if="errors.email"> {{ errors.email }}</Error>
+          <Error v-if="erraors.email"> {{ errors.email }}</Error>
         </div>
 
         <div>
@@ -57,7 +59,7 @@ function submit() {
 
       </div>
 
-      <div>
+      <div class="mt-6">
         <label class="text-gray-700 " for="note">Note</label>
         <textarea id="notes" name="notes" type="text" rows="6" v-model="form.notes"
                   class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"></textarea>
@@ -73,15 +75,3 @@ function submit() {
     </form>
   </section>
 </template>
-
-<script>
-import NavBar from "@/Layouts/NavBar.vue";
-import Subtitle from "@/Components/Subtitle.vue";
-import MyTitle from "@/Pages/MyTitle.vue";
-
-export default {
-  name: "Apply",
-  components: {MyTitle, Subtitle}
-}
-</script>
-

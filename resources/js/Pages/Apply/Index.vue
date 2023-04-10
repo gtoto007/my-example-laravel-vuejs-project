@@ -1,38 +1,25 @@
 <script setup>
-
-
+import Subtitle from "@/Components/Subtitle.vue";
+import MyTitle from "@/Pages/MyTitle.vue";
+import {router} from '@inertiajs/vue3'
 const props = defineProps({
   items: Object
 });
 
-</script>
-
-<script>
-import NavBar from "@/Layouts/NavBar.vue";
-import Subtitle from "@/Components/Subtitle.vue";
-import MyTitle from "@/Pages/MyTitle.vue";
-import {router} from '@inertiajs/vue3'
-
-
-function approve(id) {
+const approve = (id) => {
   router.post('/apply/accept', {
     id: id,
   })
 }
 
-function discard(id) {
+const discard = (id) => {
   router.post('/apply/discard', {
     id: id,
   })
 }
-
-export default {
-  name: "Apply",
-}
 </script>
 
 <template>
-
   <MyTitle class="text-center mt-5">Gestione candidature</MyTitle>
   <Subtitle class="text-center">Esamina e decidi se approvare o scartare le candidature.</Subtitle>
   <section class="container px-4 mx-auto w-full">
@@ -181,5 +168,3 @@ export default {
     </div>
   </section>
 </template>
-
-

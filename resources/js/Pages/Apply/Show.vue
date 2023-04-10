@@ -1,6 +1,7 @@
 <script setup>
 
-import {router, useForm} from '@inertiajs/vue3'
+import Subtitle from "@/Components/Subtitle.vue";
+import MyTitle from "@/Pages/MyTitle.vue";
 
 const props = defineProps({
   status: {
@@ -62,13 +63,7 @@ const props = defineProps({
 </template>
 
 <script>
-import NavBar from "@/Layouts/NavBar.vue";
-import Subtitle from "@/Components/Subtitle.vue";
-import MyTitle from "@/Pages/MyTitle.vue";
 
-export default {
-  name: "Apply",
-  components: {MyTitle, Subtitle}
-}
+
 </script>
 

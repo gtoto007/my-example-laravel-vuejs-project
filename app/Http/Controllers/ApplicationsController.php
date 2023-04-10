@@ -30,7 +30,7 @@ class ApplicationsController extends Controller
     public function create(Request $request)
     {
         if ($request->user()->application()->exists())
-            return $this->redirectPageApplication($request->user()->application());
+            return $this->redirectApplicationPage($request->user()->application());
 
         return Inertia::render('Apply/Create');
     }
@@ -60,7 +60,7 @@ class ApplicationsController extends Controller
     public function store(StoreApplyRequest $request)
     {
         if ($request->user()->application()->exists())
-            return $this->redirectPageApplication($request->user()->application());
+            return $this->redirectApplicationPage($request->user()->application());
 
         $application = Application::create([...$request->validated(), 'user_id' => Auth::user()->id]);
         return to_route('apply.show', $application->id);
@@ -83,34 +83,10 @@ class ApplicationsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
-
-    /**
      * @param Application $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function redirectPageApplication(Application $application): \Illuminate\Http\RedirectResponse
+    public function redirectApplicationPage(Application $application): \Illuminate\Http\RedirectResponse
     {
         return redirect()->intended(route('apply.show', $application->id))
             ->with(['message' => 'ti sei già candidato']);
