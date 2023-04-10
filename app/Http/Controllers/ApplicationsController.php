@@ -20,7 +20,7 @@ class ApplicationsController extends Controller
         Gate::authorize('viewAny', Application::class);
 
         $applications = Application::orderByRaw("CASE WHEN Status = '".Status::Pendente."' THEN 0 ELSE 1 END")
-            ->orderby('updated_at','Desc')
+            ->orderby('updated_at', 'Desc')
             ->paginate(10);
 
 
@@ -41,20 +41,25 @@ class ApplicationsController extends Controller
 
     public function accept(Request $request)
     {
-        $application_id = $request->input('id');
-        $application = Application::findOrFail($application_id);
-        $application->status = Status::Accettato;
-        $application->save();
+        $application = Application::findOrFail($request->input('id'));
+        try {
+            $application->accept();
+        } catch (\Exception $e) {
+            return to_route('home')->with('message', $e->getMessage());
+        }
         return to_route('apply.index')->with('message', 'Candidatura accettata');
     }
 
     public function discard(Request $request)
     {
-        $application_id = $request->input('id');
-        $application = Application::findOrFail($application_id);
-        $application->status = Status::Scartato;
-        $application->save();
+        $application = Application::findOrFail($request->input('id'));
+        try {
+            $application->discard();
+        } catch (\Exception $e) {
+            return to_route('home')->with('message', $e->getMessage());
+        }
         return to_route('apply.index')->with('message', 'Candidatura scartata');
+
     }
 
     /**
