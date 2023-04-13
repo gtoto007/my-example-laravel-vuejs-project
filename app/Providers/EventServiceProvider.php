@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\ApplicationCreated;
 use App\Events\ApplicationExamined;
+use App\Listeners\SendApplicationCreatedNotification;
 use App\Listeners\SendApplicationExaminedNotification;
 use App\Models\Application;
 use App\Observers\ChangeStatusApplicationObserver;
@@ -21,6 +23,9 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         ApplicationExamined::class => [
             SendApplicationExaminedNotification::class,
+        ],
+        ApplicationCreated::class => [
+            SendApplicationCreatedNotification::class,
         ],
         Registered::class => [
             SendEmailVerificationNotification::class,

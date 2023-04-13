@@ -21,6 +21,9 @@ return [
         'scheme' => 'https',
     ],
 
+    'slack'=>[
+        'webhook'=>env('SLACK_WEBHOOK'),
+    ],
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],

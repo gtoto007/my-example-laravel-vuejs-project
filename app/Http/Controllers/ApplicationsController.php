@@ -33,7 +33,7 @@ class ApplicationsController extends Controller
     public function create(Request $request)
     {
         if ($request->user()->application()->exists())
-            return $this->redirectApplicationPage($request->user()->application());
+            return $this->redirectApplicationPage($request->user()->application);
 
         return Inertia::render('Apply/Create');
     }
@@ -68,7 +68,7 @@ class ApplicationsController extends Controller
     public function store(StoreApplyRequest $request)
     {
         if ($request->user()->application()->exists())
-            return $this->redirectApplicationPage($request->user()->application());
+            return $this->redirectApplicationPage($request->user()->application);
 
         $application = Application::create([...$request->validated(), 'user_id' => Auth::user()->id]);
         return to_route('apply.show', $application->id);

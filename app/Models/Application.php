@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\ApplicationCreated;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -25,6 +26,9 @@ class Application extends Model
 
     protected $guarded = [];
 
+    protected $dispatchesEvents = [
+        'created' => ApplicationCreated::class,
+    ];
 
     public function getCreatedAtAttribute($date)
     {

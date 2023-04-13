@@ -65,9 +65,8 @@ defineProps({
       <Checked> Logica di accettazione o scarto dopo che admin ha cliccato sul pulsante</Checked>
       <Checked> Popolare il database con un seed delle candidature</Checked>
       <Checked> Notifica al candidato quando viene accettato o rifiutato</Checked>
-      <ul>
-        <LI> Notifica quando c’è una nuova candidatura (su Slack + Email agli utenti admin)</LI>
-      </ul>
+      <Checked> Notifica quando c’è una nuova candidatura (su Slack + Email agli utenti admin)</Checked>
+
       <Subtitle>Quando hai finito</Subtitle>
       <Paragraph>Fai il push sul repository. Esamineremo il codice che hai scritto.</Paragraph>
       <Subtitle>Cosa esamineremo</Subtitle>
