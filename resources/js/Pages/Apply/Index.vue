@@ -1,6 +1,6 @@
 <script setup>
 import Subtitle from "@/Components/Subtitle.vue";
-import MyTitle from "@/Pages/MyTitle.vue";
+import MyTitle from "@/Components/MyTitle.vue";
 import {router} from '@inertiajs/vue3'
 import {Link} from '@inertiajs/vue3'
 

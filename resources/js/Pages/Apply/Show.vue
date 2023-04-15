@@ -1,7 +1,7 @@
 <script setup>
 
 import Subtitle from "@/Components/Subtitle.vue";
-import MyTitle from "@/Pages/MyTitle.vue";
+import MyTitle from "@/Components/MyTitle.vue";
 
 const props = defineProps({
   status: {

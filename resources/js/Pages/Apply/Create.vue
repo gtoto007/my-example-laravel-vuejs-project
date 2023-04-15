@@ -1,9 +1,9 @@
 <script setup>
 
 import {router, useForm} from '@inertiajs/vue3'
-import Error from "@/Pages/Error.vue";
+import Error from "@/Components/Error.vue";
 import Subtitle from "@/Components/Subtitle.vue";
-import MyTitle from "@/Pages/MyTitle.vue";
+import MyTitle from "@/Components/MyTitle.vue";
 
 const props = defineProps({
   errors: {

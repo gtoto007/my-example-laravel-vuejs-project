@@ -1,11 +1,9 @@
 <script setup>
-import {Head, router} from '@inertiajs/vue3';
-import NavBar from "@/Layouts/NavBar.vue";
+import {Head} from '@inertiajs/vue3';
 import Paragraph from "@/Components/Paragraph.vue";
-import LI from "@/Components/LI.vue";
 import Subtitle from "@/Components/Subtitle.vue";
-import MyTitle from "@/Pages/MyTitle.vue";
-import Layout from "@/Layouts/Layout.vue";
+import MyTitle from "@/Components/MyTitle.vue";
+import { Link } from '@inertiajs/vue3';
 import Checked from "@/Components/Checked.vue";
 
 defineProps({
@@ -36,7 +34,7 @@ defineProps({
         class="bg-gray-100 w-full  text-center selection:bg-red-500 selection:text-white p-20">
       <MyTitle>Benvenuto</MyTitle>
       <p class="text-xl text-gray-500 mt-2 mb-6">Candidati ora per diventare uno sviluppatore di BitBoss</p>
-      <a :href="route('apply.create')" class="bg-blue-500 rounded-md text-white p-2">Candidati</a>
+      <Link :href="route('apply.create')" class="bg-blue-500 rounded-md text-white p-2">Candidati</Link>
     </section>
 
     <section class="bg-white w-full pl-14 pt-4  selection:bg-red-500 selection:text-white pb-4">
@@ -70,7 +68,7 @@ defineProps({
 
       <Subtitle>Alcune aggiunte sviluppate in autonomia:</Subtitle>
       <Checked>progetto convertito da Laravel 7 a Laravel 10</Checked>
-      <Checked>utilizzo di Inertia/Vue.Js invece di un classico approccio api</Checked>
+      <Checked>convertita l'applicazione in una spa con Inertia/Vue.Js invece di un classico approccio api</Checked>
 
       <Subtitle> ACCOUNT DEMO AMMINISTRATORE   </Subtitle>
       <Paragraph class="bg-gray-200 p-4">
