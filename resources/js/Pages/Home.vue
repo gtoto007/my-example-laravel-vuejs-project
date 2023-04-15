@@ -32,26 +32,25 @@ defineProps({
 
   <div class="relative flex flex-col items-center min-h-screen bg-center ">
 
-    <sectio
+    <section
         class="bg-gray-100 w-full  text-center selection:bg-red-500 selection:text-white p-20">
       <MyTitle>Benvenuto</MyTitle>
       <p class="text-xl text-gray-500 mt-2 mb-6">Candidati ora per diventare uno sviluppatore di BitBoss</p>
       <a :href="route('apply.create')" class="bg-blue-500 rounded-md text-white p-2">Candidati</a>
-    </sectio>
+    </section>
 
     <section class="bg-white w-full pl-14 pt-4  selection:bg-red-500 selection:text-white pb-4">
-      <Subtitle>Il Test</Subtitle>
-      <Paragraph>Abbiamo costruito questo test.</Paragraph>
-
-      <Paragraph>Abbiamo fatto finta di creare questa piccola - e brutta - applicazione per raccogliere le candidature
-        dei
-        programmatori. Riesci a finirla?
+      <Subtitle>Introduzione</Subtitle>
+      <Paragraph>Questo progetto ha avuto lo scopo di soddisfare alcuni requisiti richiesti per un colloquio di lavoro,
+        estendendo un'applicazione preesistente.
+        L'obiettivo dell'applicazione è quello di consentire ad un'azienda di ricevere candidature per le posizioni
+        lavorative aperte.
+      </Paragraph>
+      <Paragraph>
+        Leggi il readme.md che trovi nella root del repository per verificare la corretta configurazione del progetto.
       </Paragraph>
 
-      <Paragraph>Non ti preoccupare, non la useremo davvero per raccogliere candidature. Siamo più bravi di così.
-      </Paragraph>
-
-      <Subtitle>Requisiti</Subtitle>
+      <Subtitle>Requisiti soddisfatti:</Subtitle>
 
       <Checked>Mettere il footer sticky in fondo alla pagina</Checked>
       <Checked>Dopo la registrazione, l'utente deve finire sulla pagina per candidarsi.</Checked>
@@ -59,7 +58,8 @@ defineProps({
       <Checked>Associare la candidatura all'utente che l'ha inviata</Checked>
       <Checked> Dare all'utente la possibilità di accedere ad una pagina dove è presente lo stato
         della sua candidatura (accettata o rifiutata).Al login l'utente viene portato automaticamente su
-        questa pagina. </Checked>
+        questa pagina.
+      </Checked>
       <Checked>Un utente non può candidarsi più volte</Checked>
       <Checked>Solo gli utenti admin possono accedere alla manipolazione delle candidature</Checked>
       <Checked> Logica di accettazione o scarto dopo che admin ha cliccato sul pulsante</Checked>
@@ -67,16 +67,20 @@ defineProps({
       <Checked> Notifica al candidato quando viene accettato o rifiutato</Checked>
       <Checked> Notifica quando c’è una nuova candidatura (su Slack + Email agli utenti admin)</Checked>
 
-      <Subtitle>Quando hai finito</Subtitle>
-      <Paragraph>Fai il push sul repository. Esamineremo il codice che hai scritto.</Paragraph>
-      <Subtitle>Cosa esamineremo</Subtitle>
-      <Paragraph>Guarderemo se il codice funziona e se i requisiti sono rispettati, certo.</Paragraph>
-      <Paragraph>Ma guarderemo anche tutto il resto: la qualità e l'ordine del codice, l'inventiva per risolvere un
-        problema, quanto conosci Laravel, le ottimizzazioni e i piccoli dettagli.
+
+      <Subtitle>Alcune aggiunte sviluppate in autonomia:</Subtitle>
+      <Checked>progetto convertito da Laravel 7 a Laravel 10</Checked>
+      <Checked>utilizzo di Inertia/Vue.Js invece di un classico approccio api</Checked>
+
+      <Subtitle> ACCOUNT DEMO AMMINISTRATORE   </Subtitle>
+      <Paragraph class="bg-gray-200 p-4">
+        admin@bitboss.it<br/>
+        password<br/>
       </Paragraph>
-      <Paragraph>Non aver paura di usare troppo overengineering, di stravolgere tutto, o, al contrario, di usare la
-        nostra traccia, o di essere troppo banale. Prova - se ti va - a stupirci.
+      <Paragraph>
+        <I>(assicurati di aver lanciato il seed)</I>
       </Paragraph>
+
     </section>
   </div>
 

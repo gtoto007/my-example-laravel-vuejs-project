@@ -102,7 +102,7 @@ const discard = (id) => {
                   </td>
                   <td class="px-4 py-4 text-sm whitespace-nowrap">
                     <div class="flex items-center gap-x-6 gap-y-1 flex-col md:flex-row md:w-36">
-                      <Link href="{{route('apply.show',{id:application.id})}}"
+                      <Link :href="route('apply.show',{id:application.id})"
                             class="text-gray-500 transition-colors duration-200 underline underline-offset-4 hover:text-indigo-500 focus:outline-none">
                         Esamina
                       </Link>
