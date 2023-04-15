@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller
         if ($request->user()->application()->exists()) {
             return redirect()->intended(route('apply.show', $request->user()->application->id));
         } else if ($request->user()->isAdmin()) {
-            return redirect()->intended(route('apply.index'));
+            return redirect(route('apply.index'));
         } else {
             return redirect()->intended('home');
         }
