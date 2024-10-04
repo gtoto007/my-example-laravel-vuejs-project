@@ -1,54 +1,55 @@
-## Introduzione
-Questo progetto ha avuto lo scopo di soddisfare alcuni requisiti richiesti per un colloquio di lavoro, estendendo un'applicazione preesistente. L'obiettivo dell'applicazione è quello di consentire ad un'azienda di ricevere candidature per le posizioni lavorative aperte.
 
-Requisiti soddisfatti:
-- [x] Dopo la registrazione, l'utente deve finire sulla pagina per candidarsi.
-- [x] Memorizzare la candidatura dell'utente
-- [x] Associare la candidatura all'utente che l'ha inviata
-- [x] Dare all'utente la possibilità di accedere ad una pagina dove è presente lo stato della sua candidatura (accettata o rifiutata).Al login l'utente viene portato automaticamente su questa pagina.
-- [x] Un utente non può candidarsi più volte
-- [x] Solo gli utenti admin possono accedere alla manipolazione delle candidature
-- [x] Logica di accettazione o scarto dopo che admin ha cliccato sul pulsante
-- [x] Popolare il database con un seed delle candidature
-- [x] Notifica al candidato quando viene accettato o rifiutato
-- [x] Notifica quando c’è una nuova candidatura (su Slack + Email agli utenti admin)
+## Introduction
+This project was created to meet some requirements for a job interview, by extending an existing application. The objective of the application is to allow a company to receive job applications for open positions.
 
-Alcune aggiunte sviluppate in autonomia:
-- [x] progetto convertito da Laravel 7 a Laravel 10
-- [x] integrato startkit [breeze & Vue js](https://laravel.com/docs/10.x/starter-kits)
-- [x] utilizzo di [Inertia/Vue.Js](https://inertiajs.com/) invece di un classico approccio api 
+### Requirements met:
+- [x] After registration, the user must land on the application page.
+- [x] Store the user's job application.
+- [x] Associate the application with the user who submitted it.
+- [x] Allow the user to access a page where they can see the status of their application (accepted or rejected). Upon login, the user is automatically redirected to this page.
+- [x] A user cannot apply more than once.
+- [x] Only admin users can manipulate applications.
+- [x] Logic for accepting or rejecting an application after the admin clicks the button.
+- [x] Populate the database with a seed of job applications.
+- [x] Notify the candidate when they are accepted or rejected.
+- [x] Notify when there is a new application (on Slack + Email to admin users).
 
+### Additional features developed independently:
+- [x] Project upgraded from Laravel 7 to Laravel 10.
+- [x] Integrated startkit [breeze & Vue js](https://laravel.com/docs/10.x/starter-kits).
+- [x] Used [Inertia/Vue.Js](https://inertiajs.com/) instead of a traditional API approach.
 
-ACCOUNT DEMO AMMINISTRATORE (una volta lanciato il seed)
+#### ADMIN DEMO ACCOUNT (after seeding the database):
 ```
 admin@bitboss.it
 password
 ```
-## Installazione
 
-Per iniziare a utilizzare il progetto Laravel, seguire i seguenti passaggi:
+## Installation
 
-1. Copiare il file `.env.example` e rinominarlo in `.env` tramite il comando:
+To start using the Laravel project, follow these steps:
+
+1. Copy the `.env.example` file and rename it to `.env` using the command:
 
     ```
     cp .env.example .env
     ```
 
-2. Se vuoi puoi lanciare eseguire il progetto utilizzando sail.
-3. In tal caso è  necessario avere Docker installato e configurare l'alias del comando sail seguendo la [documentazione ufficiale di Laravel](https://laravel.com/docs/10.x/sail#configuring-a-shell-alias).
-4. Avviare il server
-   con il comando:
+2. Optionally, run the project using Laravel Sail.
+3. In that case, Docker must be installed, and you need to configure the Sail command alias following the [official Laravel documentation](https://laravel.com/docs/10.x/sail#configuring-a-shell-alias).
+4. Start the server with the command:
 
     ```
     sail up -d
     ```
-5. Entra nella shell di container del webserver
+
+5. Access the shell of the webserver container with:
 
     ```
     sail shell
     ```
 
-6. Effettuare la prima configurazione del progetto eseguendo i seguenti comandi:
+6. Perform the initial project setup by running the following commands:
 
     ```
     composer install
@@ -57,43 +58,42 @@ Per iniziare a utilizzare il progetto Laravel, seguire i seguenti passaggi:
     php artisan migrate --seed
     ```
 
-7. Accedere al sito web aprendo il browser e digitando l'indirizzo:
+7. Access the website by opening a browser and navigating to:
 
     ```
     http://localhost
     ```
 
-8. Potrai accedere alla dashboard di Mailpit tramite il link:
+8. Access the Mailpit dashboard via the link:
 
     ```
     http://localhost:8025
     ```
 
-ACCOUNT DEMO AMMINISTRATORE 
+#### ADMIN DEMO ACCOUNT
 ```
 admin@bitboss.it
 password
 ```
 
-## Configurare le variabili d'ambiente
+## Configuring environment variables
 
-Per ricevere le notifiche delle nuove candidature su Slack, è necessario aprire il file `.env` e inserire il webhook di
-Slack nel parametro `SLACK_WEBHOOK`, come segue:
+To receive notifications of new job applications on Slack, open the `.env` file and insert the Slack webhook into the `SLACK_WEBHOOK` parameter as follows:
 
 ```
 SLACK_WEBHOOK=YOUR_WEBHOOK_SLACK
 ```
 
-## Screenshot del progetto
+## Project Screenshots
 
-![Screensaver 1](public/screensaver/1.png)
-*dashboard per gestire le candidature*
+![Screenshot 1](public/screensaver/1.png)
+*Dashboard for managing applications*
 
-![Screensaver 2](public/screensaver/2.png )
-*form per invio candidatura*
+![Screenshot 2](public/screensaver/2.png)
+*Job application submission form*
 
-![Screensaver 3](public/screensaver/3.png )
-*notifica slack ricezione candidatura*
+![Screenshot 3](public/screensaver/3.png)
+*Slack notification for receiving a new application*
 
-![Screensaver 4](public/screensaver/4.png )
-*notifica email al candidato risultato candidatura*
+![Screenshot 4](public/screensaver/4.png)
+*Email notification to the candidate with the application result*
